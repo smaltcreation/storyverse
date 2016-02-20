@@ -1,0 +1,11 @@
+#home .map {
+    background: #f5f5f5;
+    width: 100% !important;
+    height: calc(100vh - 64px) !important;
+}
+
+#home .map .btn-floating {
+    position: absolute;
+    right: 50px;
+    top: 104px
+}
