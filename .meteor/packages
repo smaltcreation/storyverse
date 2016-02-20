@@ -11,28 +11,33 @@ blaze-html-templates    # Compile .html files into Meteor Blaze views
 session                 # Client-side reactive dictionary for your app
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
-email
 
 standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 accounts-password
-aldeed:template-extension
 check
-digilord:faker
-iron:router
+email
 less
+reactive-var
+
+aldeed:autoform
+aldeed:template-extension
+chrismbeckett:toastr
+dburles:google-maps
+digilord:faker
+fortawesome:fontawesome
+gildaspk:autoform-materialize
+iron:router
 materialize:materialize
+mdg:geolocation
+oakworks:marker-clusterer
 okgrow:router-autoscroll
 polyroid:font-roboto
-reactive-var
 slam310:smooth-scroll
+storyverse:vis
 underscorestring:underscore.string
 useraccounts:core
 useraccounts:iron-routing
 useraccounts:materialize
-aldeed:autoform
-gildaspk:autoform-materialize
-chrismbeckett:toastr
-fortawesome:fontawesome
