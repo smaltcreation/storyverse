@@ -1,11 +1,9 @@
 #home .map {
-    background: #f5f5f5;
-    width: 100% !important;
-    height: calc(100vh - 64px) !important;
+    height: calc(100vh - 64px);
 }
 
-#home .map .btn-floating {
+#home .map #geolocate-me {
     position: absolute;
     right: 50px;
-    top: 104px
+    top: 50px
 }

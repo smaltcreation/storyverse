@@ -29,3 +29,32 @@
     font-size: 12px;
     line-height: 1;
 }
+
+.btn-icon {
+    border-radius: 50%;
+    font-size: 24px;
+    height: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 32px;
+    width: 32px;
+    padding: 0;
+    overflow: hidden;
+    color: inherit;
+    line-height: normal;
+}
+
+.btn-icon:hover {
+    background-color: rgba(158,158,158,.2);
+}
+
+.btn-icon .material-icons {
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-12px,-12px);
+    transform: translate(-12px,-12px);
+    line-height: 24px;
+    width: 24px;
+}

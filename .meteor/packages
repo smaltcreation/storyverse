@@ -24,8 +24,10 @@ digilord:faker
 iron:router
 less
 materialize:materialize
+okgrow:router-autoscroll
 polyroid:font-roboto
 reactive-var
+slam310:smooth-scroll
 underscorestring:underscore.string
 useraccounts:core
 useraccounts:iron-routing
