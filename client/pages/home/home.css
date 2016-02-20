@@ -8,6 +8,16 @@
     background: #eeeeee;
 }
 
+#home section:last-child {
+    margin-bottom: -30px;
+}
+
+@media screen and (min-width: 992px) {
+    #home section:last-child {
+        margin-bottom: -48px;
+    }
+}
+
 #home section:not(.map) {
     padding: 100px 0;
 }

@@ -1,5 +1,5 @@
 footer.page-footer {
-    margin-top: 0 !important;
+    margin-top: 30px;
 }
 
 footer.page-footer a {
@@ -8,4 +8,10 @@ footer.page-footer a {
 
 footer.page-footer a:hover {
     color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+    footer.page-footer {
+        margin-top: 48px;
+    }
 }

@@ -58,3 +58,15 @@
     line-height: 24px;
     width: 24px;
 }
+
+.grey-scale {
+    -webkit-filter: grayscale(1);
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    filter: grayscale(100%);
+    filter: url(/images/_greyscale.svg#greyscale);
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
