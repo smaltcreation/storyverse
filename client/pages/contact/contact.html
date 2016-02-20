@@ -1,0 +1,11 @@
+<template name="contact">
+    {{#autoForm options}}
+        {{> afFormGroup name="name"}}
+        {{> afFormGroup name="message" rows=10}}
+        <div class="center-align">
+            <button type="submit" class="btn waves-effect waves-light">Send
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    {{/autoForm}}
+</template>
