@@ -54,6 +54,10 @@
     color: #6a1b9a;
 }
 
+nav {
+    box-shadow: none;
+}
+
 .dropdown-content li > a, .dropdown-content li > span {
     color: #1e88e5;
 }

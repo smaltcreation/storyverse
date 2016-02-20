@@ -1,5 +1,6 @@
-#home .map {
+#home section.map {
     height: calc(100vh - 64px);
+    min-height: initial;
 }
 
 #home .map #geolocate-me {
