@@ -31,4 +31,6 @@ useraccounts:core
 useraccounts:iron-routing
 useraccounts:materialize
 aldeed:autoform
+gildaspk:autoform-materialize
 chrismbeckett:toastr
+fortawesome:fontawesome
