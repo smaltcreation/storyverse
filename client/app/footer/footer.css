@@ -1,0 +1,11 @@
+footer.page-footer {
+    margin-top: 0 !important;
+}
+
+footer.page-footer a {
+    color: #e1bee7;
+}
+
+footer.page-footer a:hover {
+    color: #fff;
+}

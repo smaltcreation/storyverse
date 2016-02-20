@@ -1,0 +1,91 @@
+/* Overriding some materialize styles */
+
+.row {
+    margin-bottom: 0;
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.btn,
+.btn-large {
+    background-color: #6a1b9a;
+}
+
+.btn:hover,
+.btn-large:hover {
+    background-color: #6a1b9a;
+}
+
+/* label color */
+.input-field label {
+    color: #6a1b9a;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #6a1b9a;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #6a1b9a;
+    box-shadow: 0 1px 0 0 #6a1b9a;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #6a1b9a;
+    box-shadow: 0 1px 0 0 #6a1b9a;
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #6a1b9a;
+    box-shadow: 0 1px 0 0 #6a1b9a;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #6a1b9a;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #1e88e5;
+}
+
+.tabs .tab a {
+    color: #1e88e5;
+}
+
+.tabs .tab a:hover {
+    color: #90caf9;
+}
+
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #1e88e5;
+    will-change: left, right;
+}
+
+.collection .collection-item.avatar {
+    min-height: 70px;
+}
+
+.collection .secondary-content {
+    color: inherit;
+}
+
+.card .card-action .material-icons {
+    font-size: inherit;
+}
+
+.dropdown-content i.material-icons {
+    vertical-align: middle;
+}
