@@ -17,4 +17,4 @@ Yeah sure, just dive in and write a line, a chapter or even a whole story!
 
 #### Can I copy it ?
 
-No sorry, any full or partial reproduction of the site in any way is strictly prohibited without written agreement of Smalt Creating SAS.
+No sorry, any full or partial reproduction of the site in any way is strictly prohibited without written agreement of Smalt Création SAS.
