@@ -1,5 +1,10 @@
 <template name="navigationDropdown">
     <li>
-        <a href="#">Hey !</a>
+        {{#if currentUser}}
+            <a href="#" id="logout">Logout</a>
+        {{else}}
+            <a href="{{pathFor 'atSignIn'}}">Login</a>
+            <a href="{{pathFor 'atSignUp'}}">Register</a>
+        {{/if}}
     </li>
 </template>
