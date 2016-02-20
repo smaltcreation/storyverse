@@ -1,4 +1,7 @@
 /* Some css extensions inspired by many framework */
+.container-fluid {
+    padding: 0 0.75rem;
+}
 
 .jumbotron {
     padding-top: 30px;

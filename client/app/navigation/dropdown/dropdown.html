@@ -1,10 +1,23 @@
 <template name="navigationDropdown">
-    <li>
-        {{#if currentUser}}
-            <a href="#" id="logout">Logout</a>
-        {{else}}
-            <a href="{{pathFor 'atSignIn'}}">Login</a>
-            <a href="{{pathFor 'atSignUp'}}">Register</a>
-        {{/if}}
-    </li>
+    {{#if currentUser}}
+        <li>
+            <a href="#" id="logout">
+                <i class="material-icons left">exit_to_app</i>
+                Logout
+            </a>
+        </li>
+    {{else}}
+        <li>
+            <a href="{{pathFor 'atSignIn'}}">
+                <i class="material-icons left">check_circle</i>
+                Login
+            </a>
+        </li>
+        <li>
+            <a href="{{pathFor 'atSignUp'}}">
+                <i class="material-icons left">person_add</i>
+                Register
+            </a>
+        </li>
+    {{/if}}
 </template>

@@ -1,0 +1,71 @@
+.node-show {
+    margin-left: -10px;
+}
+
+.nodes {
+    list-style: none;
+    position: relative;
+}
+
+.nodes .node {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.nodes .node:before,
+.nodes .node:after {
+    content: " ";
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 3px;
+    background-color: #5e5e5e;
+    right: 25px;
+    height: calc(100% + 20px);
+}
+
+.nodes .node:after {
+    clear: both;
+}
+
+.nodes .node > .card {
+    margin: 0 10px;
+    width: calc(100% - 70px);
+    position: relative;
+}
+
+.nodes .node > .node-badge {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1em;
+    text-align: center;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background-color: #5e5e5e;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.nodes .row .col {
+    padding: 0;
+}
+
+.nodes .end {
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.nodes .end .card-panel,
+.nodes .end .card-panel p {
+    margin: 0;
+}
+
+.nodes .end .btn-flat {
+    padding: 0 1rem;
+}
