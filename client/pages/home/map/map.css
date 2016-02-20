@@ -9,6 +9,11 @@
     top: 50px
 }
 
+#home .map .map-canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
 #home .map a[data-scroll] {
     z-index: 100;
 }

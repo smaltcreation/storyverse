@@ -10,8 +10,8 @@ Meteor.startup(function () {
             title: faker.lorem.sentence(),
             content: faker.lorem.paragraphs(),
             location: {
-                lat: faker.address.latitude(),
-                lng: faker.address.longitude()
+                lat: parseFloat(faker.address.latitude()),
+                lng: parseFloat(faker.address.longitude())
             },
             lang: faker.address.countryCode().toLowerCase()
         };
@@ -21,13 +21,15 @@ Meteor.startup(function () {
         // Root nodes
         _.each(_.range(ROOT_NODES), function (rootNodeNumber) {
             console.log('Creating root node', rootNodeNumber, '/', ROOT_NODES);
+            let totalChildNodes = _.random(CHILD_NODES_MIN, CHILD_NODES_MAX);
 
-            let rootNodeId = Collection.Nodes.insert(generateNode());
+            let rootNodeId = Collection.Nodes.insert(_.extend(generateNode(), {
+                totalChildren: totalChildNodes
+            }));
+
             let ids = [rootNodeId];
 
             // Child nodes
-            let totalChildNodes = _.random(CHILD_NODES_MIN, CHILD_NODES_MAX);
-            
             _.each(_.range(totalChildNodes), function (childNodeNumber) {
                 console.log('Creating child node', childNodeNumber, '/', totalChildNodes, '- root node', rootNodeNumber, '/', ROOT_NODES);
 
