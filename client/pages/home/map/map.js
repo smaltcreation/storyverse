@@ -38,7 +38,12 @@ Template.homeMap.helpers({
                 center: new google.maps.LatLng(48.5, 2.2),
                 zoom: 5,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                scrollwheel: false
+                scrollwheel: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                streetViewControl: false,
+                rotateControl: false,
+                fullscreenControl: false
             };
         }
     }
