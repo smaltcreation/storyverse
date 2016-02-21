@@ -5,7 +5,7 @@
 }
 
 #home section:nth-child(odd) {
-    background: #eeeeee;
+    background: #e5e3df;
 }
 
 #home section:last-child {
@@ -14,6 +14,7 @@
 
 #home section:not(.map) {
     padding: 100px 0;
+    border-top: 1px solid #c0c0c0;
 }
 
 #home section a[data-scroll] {

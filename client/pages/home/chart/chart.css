@@ -1,0 +1,4 @@
+#home #chart {
+    height: calc(100vh - 275px);
+    min-height: initial;
+}
