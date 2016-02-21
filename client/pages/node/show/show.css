@@ -112,3 +112,9 @@
         margin-top: 48px;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .node-show-container .row .col.m12 {
+        width: 100%;
+    }
+}
