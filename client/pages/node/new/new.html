@@ -1,0 +1,21 @@
+<template name="nodeNew">
+    <div class="jumbotron center-align">
+        <h1>Write a new story</h1>
+    </div>
+    <div class="container">
+        {{>quickForm options}}
+    </div>
+    <div id="geolocation-modal" class="modal">
+        <div class="modal-content">
+            <h4>Geolocation required</h4>
+            <p>
+                You have refused to let us access to your geolocation.<br>
+                Without it, we cannot place your story on the map.<br>
+                You can still write your story, but it will not appear on the map.
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+</template>

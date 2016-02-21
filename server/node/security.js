@@ -1,0 +1,12 @@
+Collection.Nodes
+    .permit(['insert'])
+    .ifLoggedIn()
+    .onlyProps([
+        'title',
+        'content',
+        'language',
+        'color',
+        'from',
+        'location'
+    ])
+    .apply();

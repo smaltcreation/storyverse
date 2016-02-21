@@ -12,7 +12,7 @@ MapContainer = class MapContainer {
 
         Meteor.call('getMaxLikes', function (error, maxLikes) {
             if (!error) {
-                self.maxLikes = maxLikes;
+                self.maxLikes = maxLikes === 0 ? 1 : maxLikes;
                 self.start();
             }
         });

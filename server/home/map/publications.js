@@ -4,7 +4,12 @@ Meteor.publish('homeMap', function (bounds) {
     }
 
     let selector = {
-        from: null
+        from: {
+            $exists: false
+        },
+        location: {
+            $ne: null
+        }
     };
 
     // Latitude

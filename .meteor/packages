@@ -18,6 +18,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 accounts-password
 check
+coffeescript
 email
 less
 reactive-var

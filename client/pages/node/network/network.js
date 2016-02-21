@@ -8,7 +8,6 @@ Template.nodeNetwork.onRendered(function () {
     self.autorun(function () {
         if (self.subscriptionsReady()) {
             let nodes = Collection.Nodes.find();
-
             let data = {
                 nodes: [],
                 edges: []
