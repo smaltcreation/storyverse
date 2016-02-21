@@ -68,6 +68,7 @@ Template.homeMap.helpers({
             return {
                 center: new google.maps.LatLng(48.5, 2.2),
                 zoom: 5,
+                minZoom: 3,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 scrollwheel: false,
                 mapTypeControl: false,

@@ -1,11 +1,20 @@
 MapContainer = class MapContainer {
     constructor (map, bounds, markerClusterOptions = {}) {
-        this.map = map;
-        this.bounds = bounds;
-        this.markerCluster = null;
-        this.markerClusterOptions = markerClusterOptions;
+        let self = this;
 
-        this.start();
+        self.map = map;
+        self.bounds = bounds;
+        self.maxLikes = null;
+        self.maxSize = 50;
+        self.markerCluster = null;
+        self.markerClusterOptions = markerClusterOptions;
+
+        Meteor.call('getMaxLikes', function (error, maxLikes) {
+            if (!error) {
+                self.maxLikes = maxLikes;
+                self.start();
+            }
+        });
     }
 
     start () {
@@ -45,14 +54,15 @@ MapContainer = class MapContainer {
     }
 
     addedDoc (doc) {
+        let strokeWeight = doc.likes * this.maxSize / this.maxLikes / 2;
+
         let marker = new google.maps.Marker({
-            doc: doc,
+            doc,
             position: new google.maps.LatLng(doc.location.lat, doc.location.lng),
             icon: {
                 path: google.maps.SymbolPath.CIRCLE,
-                scale: 2,
                 strokeColor: '#008cff',
-                strokeWeight: 10,
+                strokeWeight,
                 fillColor: '#008cff'
             }
         });
@@ -61,8 +71,9 @@ MapContainer = class MapContainer {
     }
 
     changedDoc (doc) {
-        this.removedDoc(doc);
-        this.addedDoc(doc);
+        // TODO: test
+        let marker = this.findMarkerByDoc(doc);
+        marker.doc = doc;
     }
 
     removedDoc (doc) {
@@ -71,19 +82,9 @@ MapContainer = class MapContainer {
     }
 
     findMarkerByDoc (doc) {
-        let result = null;
-
-        _.some(this.markerCluster.getMarkers(), function (marker) {
-            let found = doc._id === marker.doc._id;
-
-            if (found) {
-                result = marker;
-            }
-
-            return found;
+        return _.find(this.markerCluster.getMarkers(), function (marker) {
+            return doc._id === marker.doc._id;
         });
-
-        return result;
     }
 
     centerOnLocation (location, zoom = 4) {

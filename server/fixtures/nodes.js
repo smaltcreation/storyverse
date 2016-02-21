@@ -4,16 +4,25 @@ Meteor.startup(function () {
     const CHILD_NODES_MAX = 100;
     
     let generateNode = function (root = null, from = null) {
+        let lat = faker.address.latitude();
+
+        if (lat < -80) {
+            lat = -80;
+        } else if (lat > 80) {
+            lat = 80;
+        }
+
         return {
             root,
             from,
             title: faker.lorem.sentence(),
             content: faker.lorem.paragraphs(),
             location: {
-                lat: parseFloat(faker.address.latitude()),
+                lat: parseFloat(lat),
                 lng: parseFloat(faker.address.longitude())
             },
-            lang: faker.address.countryCode().toLowerCase()
+            lang: faker.address.countryCode().toLowerCase(),
+            likes: faker.random.number()
         };
     };
 
