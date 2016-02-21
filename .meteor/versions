@@ -76,6 +76,7 @@ numeral:numeral@1.5.3_1
 oakworks:marker-clusterer@0.1.1
 observe-sequence@1.0.7
 okgrow:router-autoscroll@0.1.6
+ongoworks:security@1.3.0
 ordered-dict@1.0.4
 polyroid:font-roboto@1.0.1
 promise@0.5.1

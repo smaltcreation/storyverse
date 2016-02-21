@@ -41,6 +41,9 @@ Template.homeMap.onCreated(function () {
 });
 
 Template.homeMap.helpers({
+    tips: function () {
+        return Meteor.user() ? Meteor.user().profile.tips : Session.get('tips');
+    },
     options: function () {
         if (GoogleMaps.loaded()) {
             return {
@@ -233,6 +236,18 @@ Template.homeMap.events({
         if (!Geolocation.error() && location) {
             template.container.centerOnLocation(new google.maps.LatLng(location.lat, location.lng));
         }
+    },
+    'click .dismiss-tips': function (event) {
+        let update = function () {
+            Meteor.users.update(Meteor.userId(), {
+                $set: {
+                    'profile.tips': false
+                }
+            })
+        };
+
+        $(event.target).remove();
+        Meteor.userId() ? update() : Session.set('tips', false);
     }
 });
 

@@ -55,7 +55,7 @@ MapContainer = class MapContainer {
     }
 
     addedDoc (doc) {
-        const COLOR = '#fff';
+        const COLOR = '#5c6bc0';
         let strokeWeight = doc.likes * this.maxSize / this.maxLikes;
 
         if (strokeWeight < this.minSize) {

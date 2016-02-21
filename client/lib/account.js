@@ -25,7 +25,6 @@ let preSignUp = function (password, info) {
         '9E9E9E',
         '607D8B'
     ];
-    console.log(info);
 
     info.profile.tips = true;
     info.profile.color = '#' + _.sample(colors);

@@ -12,6 +12,10 @@
     margin-top: 0;
 }
 
+.nodes .col {
+    padding: 0;
+}
+
 .nodes:last-of-type {
     margin-bottom: 0;
 }
@@ -77,4 +81,10 @@
 
 .nodes .end .btn-flat {
     padding: 0 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .nodes .col {
+        padding: 0 0.75rem;
+    }
 }
