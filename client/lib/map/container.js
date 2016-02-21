@@ -50,7 +50,10 @@ MapContainer = class MapContainer {
             position: new google.maps.LatLng(doc.location.lat, doc.location.lng),
             icon: {
                 path: google.maps.SymbolPath.CIRCLE,
-                scale: 5
+                scale: 2,
+                strokeColor: '#008cff',
+                strokeWeight: 10,
+                fillColor: '#008cff'
             }
         });
 
