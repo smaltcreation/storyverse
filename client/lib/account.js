@@ -37,7 +37,41 @@ AccountsTemplates.configure({
     // Redirects
     //homeRoutePath: '/',
     //redirectTimeout: 4000,
-    preSignUpHook: preSignUp
+    preSignUpHook: preSignUp,
+
+    // Override
+    texts: {
+        inputIcons: {
+            isValidating: "fa fa-spinner fa-spin",
+            hasSuccess: "fa fa-check",
+            hasError: "fa fa-times"
+        }
+    }
+});
+
+AccountsTemplates.addField({
+    _id: 'username',
+    type: 'text',
+    required: true,
+    showValidating: true,
+    placeholder: {
+        signUp: "wjames"
+    },
+    func: function(value){
+        if (Meteor.isClient) {
+            var self = this;
+            Meteor.call("userExists", value, function(err, userExists){
+                if (!userExists)
+                    self.setSuccess();
+                else
+                    self.setError(userExists);
+                self.setValidating(false);
+            });
+            return;
+        }
+        // Server
+        return Meteor.call("userExists", value);
+    }
 });
 
 // Routes declaration

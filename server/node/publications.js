@@ -1,7 +1,19 @@
 Meteor.publish('nodeShow', function (nodeId) {
-    return Collection.Nodes.find({
-        _id: nodeId
-    });
+    let node = Collection.Nodes.findOne(nodeId);
+
+    return [
+        Collection.Nodes.find({
+            _id: nodeId
+        }),
+        Meteor.users.find({
+            _id: node.createdBy
+        }, {
+            fields: {
+                username: 1,
+                profile: 1
+            }
+        })
+    ];
 });
 
 Meteor.publish('nodeNetwork', function (nodeId) {
