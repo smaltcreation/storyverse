@@ -3,12 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Getting started!</h5>
-                    <p class="grey-text text-lighten-4">
-                        Welcome to <strong>Storyverse</strong>! Here stories have multiple endings, multiple paths.<br>
-                        Read what other people have composed or just start making your own story.<br>
-                        Let your <strong>imagination</strong> flow!
-                    </p>
+                    <h5 class="white-text">Yeah, statistics!</h5>
+                    {{#if Template.subscriptionsReady}}
+                        <p class="grey-text text-lighten-4">
+                            {{stories}} stories<br>
+                            {{nodes}} nodes<br>
+                            {{users}} users<br>
+                        </p>
+                    {{/if}}
                 </div>
                 <div class="col l3 s6">
                     <h5>You want more?</h5>
@@ -46,7 +48,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                We are <a href="http://www.smaltcreation.com">Smalt Création</a>
+                Made with <span class="fa fa-heart"></span> by <a href="http://www.smaltcreation.com">Smalt Création</a>
             </div>
         </div>
     </footer>
