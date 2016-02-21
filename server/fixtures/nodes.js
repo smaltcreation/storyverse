@@ -1,7 +1,7 @@
 Meteor.startup(function () {
-    const ROOT_NODES = 1000;
+    const ROOT_NODES = 100;
     const CHILD_NODES_MIN = 10;
-    const CHILD_NODES_MAX = 1000;
+    const CHILD_NODES_MAX = 200;
 
     if (Collection.Nodes.find().count() === 0) {
         // Root nodes

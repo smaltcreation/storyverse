@@ -10,6 +10,8 @@
     "sendTo": "contact@smaltcreation.com"
   },
   "public": {
-
+    "ga": {
+      "id": "UA-XXXX-Y"
+    }
   }
 }
