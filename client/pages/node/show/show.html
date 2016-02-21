@@ -14,108 +14,110 @@
         }
     </style>
 
-    <div class="node-show">
-        <ul id="node-id-show" class="nodes">
-            <!--Main node (selected node)-->
-            <li class="node main">
-                <div class="node-badge">
-                    <span>182</span>
+    <div class="container-fluid node-show-container">
+        <div class="row">
+            <div class="col m12 l6">
+                {{> nodeNetwork node=node}}
+            </div>
+            <div class="col m12 l6">
+                <div class="node-show">
+                    <ul id="node-id-show" class="nodes">
+                        <!--Main node (selected node)-->
+                        <li class="node main">
+                            <div class="node-badge">
+                                <span>{{score}}</span>
+                            </div>
+                            <div class="card">
+                                <div class="card-content">
+                                    {{#if node.title}}
+                                        <span class="card-title">
+                                            {{node.title}}
+                                        </span>
+                                    {{/if}}
+                                    <p>
+                                        {{{nl2br node.content}}}
+                                    </p>
+                                </div>
+                                <div class="card-action right-align">
+                                    <a href="#" class="deep-purple-text">Upvote</a>
+                                    <a href="#" class="deep-purple-text">Fork the story</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <!--If they're several node there is a new <ul></ul> -->
+                            <ul class="nodes row">
+                                <!--First is the external node with the best score, hidden for phones-->
+                                <li class="node node-external col s12 m6 hide-on-small-only">
+                                    <div class="node-badge">
+                                        <span>42</span>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <span class="card-title">I'm a node</span>
+                                            <p>
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                            </p>
+                                        </div>
+                                        <div class="card-action right-align">
+                                            <a href="#" class="deep-purple-text">Upvote</a>
+                                            <a href="#" class="deep-purple-text">Continue here</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--Second is the next node of the author-->
+                                <li class="node col s12 m6">
+                                    <div class="node-badge">
+                                        <span>38</span>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <span class="card-title">I'm a node</span>
+                                            <p>
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                                I am a very simple card. I am good at containing small bits of information.
+                                                I am convenient because I require little markup to use effectively.
+                                            </p>
+                                        </div>
+                                        <div class="card-action right-align">
+                                            <a href="#" class="deep-purple-text">Upvote</a>
+                                            <a href="#" class="deep-purple-text">Continue here</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="end">
+                            <div class="card-panel grey darken-3 right-align">
+                                <a class="btn-flat white-text">
+                                    <i class="material-icons left">timeline</i>
+                                    Sea all branches
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">I'm a node</span>
-                        <p>
-                            I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.
-                            I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.
-                            I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.
-                            I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.
-                            I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.
-                            I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.
-                        </p>
-                    </div>
-                    <div class="card-action right-align">
-                        <a href="#" class="deep-purple-text">Upvote</a>
-                        <a href="#" class="deep-purple-text">Fork the story</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <!--If they're several node there is a new <ul></ul> -->
-                <ul class="nodes row">
-                    <!--First is the external node with the best score, hidden for phones-->
-                    <li class="node node-external col s12 m6 hide-on-small-only">
-                        <div class="node-badge">
-                            <span>42</span>
-                        </div>
-                        <div class="card">
-                            <div class="card-content">
-                                <span class="card-title">I'm a node</span>
-                                <p>
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                </p>
-                            </div>
-                            <div class="card-action right-align">
-                                <a href="#" class="deep-purple-text">Upvote</a>
-                                <a href="#" class="deep-purple-text">Continue here</a>
-                            </div>
-                        </div>
-                    </li>
-                    <!--Second is the next node of the author-->
-                    <li class="node col s12 m6">
-                        <div class="node-badge">
-                            <span>38</span>
-                        </div>
-                        <div class="card">
-                            <div class="card-content">
-                                <span class="card-title">I'm a node</span>
-                                <p>
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                    I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.
-                                </p>
-                            </div>
-                            <div class="card-action right-align">
-                                <a href="#" class="deep-purple-text">Upvote</a>
-                                <a href="#" class="deep-purple-text">Continue here</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            <li class="end">
-                <div class="card-panel grey darken-3 right-align">
-                    <a class="btn-flat white-text">
-                        <i class="material-icons left">timeline</i>
-                        Sea all branches
-                    </a>
-                </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </template>

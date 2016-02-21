@@ -22,6 +22,9 @@ email
 less
 reactive-var
 
+meteorhacks:npm
+npm-container
+
 aldeed:autoform
 aldeed:template-extension
 chrismbeckett:toastr
@@ -30,8 +33,10 @@ digilord:faker
 fortawesome:fontawesome
 gildaspk:autoform-materialize
 iron:router
+matb33:collection-hooks
 materialize:materialize
 mdg:geolocation
+numeral:numeral
 oakworks:marker-clusterer
 okgrow:router-autoscroll
 polyroid:font-roboto

@@ -1,5 +1,6 @@
 <template name="nodeNetwork">
-    <div class="network">
-
-    </div>
+    {{#unless Template.subscriptionsReady}}
+        {{> loading}}
+    {{/unless}}
+    <div class="network"></div>
 </template>

@@ -73,6 +73,13 @@ MapContainer = class MapContainer {
             }
         });
 
+        // Open page on click
+        google.maps.event.addListener(marker, 'click', function () {
+            Router.go('nodeShow', {
+                id: doc._id
+            });
+        });
+
         this.markerCluster.addMarker(marker);
     }
 
@@ -84,6 +91,7 @@ MapContainer = class MapContainer {
 
     removedDoc (doc) {
         let marker = this.findMarkerByDoc(doc);
+        google.maps.event.clearInstanceListeners(marker);
         this.markerCluster.removeMarker(marker);
     }
 
