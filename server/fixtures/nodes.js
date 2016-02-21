@@ -1,7 +1,7 @@
 Meteor.startup(function () {
-    const ROOT_NODES = 100;
+    const ROOT_NODES = 200;
     const CHILD_NODES_MIN = 10;
-    const CHILD_NODES_MAX = 200;
+    const CHILD_NODES_MAX = 55;
 
     if (Collection.Nodes.find().count() === 0) {
         // Root nodes
@@ -52,10 +52,10 @@ function generateChildNode (root, from) {
 
 function generateNode () {
     return {
-        content: faker.lorem.paragraphs(),
+        content: faker.lorem.paragraph(10, true, 4),
         lang: faker.address.countryCode().toLowerCase(),
         likes: faker.random.number(),
         totalChildrenLikes: faker.random.number(),
-        color: faker.internet.color()
+        color: _.sample(COLORS)
     };
 }

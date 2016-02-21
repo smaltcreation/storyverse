@@ -1,5 +1,14 @@
 .node-show-container {
-    padding: 25px 0;
+    margin-top: 30px;
+}
+
+.node-show-container .collapsible {
+    margin: 0 0 1rem;
+    width: 100%;
+}
+
+.node-show-container .collapsible .collapsible-body{
+    background: #fff;
 }
 
 .node-show {
@@ -10,10 +19,6 @@
     list-style: none;
     position: relative;
     margin-top: 0;
-}
-
-.nodes .col {
-    padding: 0;
 }
 
 .nodes:last-of-type {
@@ -32,7 +37,7 @@
     bottom: 0;
     position: absolute;
     width: 3px;
-    background-color: #5e5e5e;
+    background-color: #2b2b2b;
     right: 25px;
     height: calc(100% + 20px);
 }
@@ -65,8 +70,13 @@
     border-bottom-left-radius: 50%;
 }
 
-.nodes .row .col {
-    padding: 0;
+.node .card-content .card-title {
+    line-height: 18px;
+    font-size: 18px;
+}
+
+.node .card-content .card-title::first-letter {
+    text-transform: uppercase;
 }
 
 .nodes .end {
@@ -79,12 +89,26 @@
     margin: 0;
 }
 
-.nodes .end .btn-flat {
-    padding: 0 1rem;
+.nodes .end a {
+    margin-left: 2rem;
 }
 
-@media screen and (min-width: 600px) {
-    .nodes .col {
+.nodes .row .col {
+    padding: 0 !important;
+}
+
+@media screen and (min-width: 768px) {
+    .node-show-container .col {
         padding: 0 0.75rem;
+    }
+    .node .card-content .card-title {
+        line-height: 24px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .node-show-container {
+        margin-top: 48px;
     }
 }

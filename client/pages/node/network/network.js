@@ -8,7 +8,6 @@ Template.nodeNetwork.onRendered(function () {
     self.autorun(function () {
         if (self.subscriptionsReady()) {
             let nodes = Collection.Nodes.find();
-            console.log(nodes.count(), 'nodes');
 
             let data = {
                 nodes: [],
@@ -43,7 +42,7 @@ Template.nodeNetwork.onRendered(function () {
                     shape: 'dot',
                     size: 30,
                     font: {
-                        size: 25,
+                        size: 20,
                         color: '#333'
                     },
                     borderWidth: 2

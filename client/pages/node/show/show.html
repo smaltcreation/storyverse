@@ -14,14 +14,24 @@
         }
     </style>
 
-    <div class="container-fluid node-show-container">
+    <div class="node-show-container">
         <div class="row">
-            <div class="col m12 l6">
-                {{> nodeNetwork node=node}}
+            <div class="col m12 l4">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header active">
+                            <i class="material-icons">timeline</i>
+                            Network visualization
+                        </div>
+                        <div class="collapsible-body">
+                            {{> nodeNetwork node=node}}
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="col m12 l6">
+            <div class="col m12 l8">
                 <div class="node-show">
-                    <ul id="node-id-show" class="nodes">
+                    <ul class="nodes">
                         <!--Main node (selected node)-->
                         <li class="node main">
                             <div class="node-badge">
@@ -108,10 +118,19 @@
                             </ul>
                         </li>
                         <li class="end">
-                            <div class="card-panel grey darken-3 right-align">
-                                <a class="btn-flat white-text">
-                                    <i class="material-icons left">timeline</i>
-                                    Sea all branches
+                            <div class="card-panel right-align">
+                                Share it with your friends !
+                                <a class="indigo-text">
+                                    <i class="fa fa-facebook-square"></i>
+                                    <span>Facebook</span>
+                                </a>
+                                <a class="indigo-text">
+                                    <i class="fa fa-twitter-square"></i>
+                                    <span>Twitter</span>
+                                </a>
+                                <a class="indigo-text">
+                                    <i class="fa fa-google-plus-square"></i>
+                                    <span>Google+</span>
                                 </a>
                             </div>
                         </li>
