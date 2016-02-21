@@ -12,12 +12,6 @@
     margin-bottom: -30px;
 }
 
-@media screen and (min-width: 992px) {
-    #home section:last-child {
-        margin-bottom: -48px;
-    }
-}
-
 #home section:not(.map) {
     padding: 100px 0;
 }
@@ -27,4 +21,10 @@
     left: 50%;
     right: 50%;
     bottom: 50px;
+}
+
+@media screen and (min-width: 992px) {
+    #home section:last-child {
+        margin-bottom: -48px;
+    }
 }
