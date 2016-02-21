@@ -20,58 +20,58 @@
 
 .btn,
 .btn-large {
-    background-color: #536dfe;
+    background-color: #3f51b5;
 }
 
 .btn:hover,
 .btn-large:hover {
-    background-color: #536dfe;
+    background-color: #3f51b5;
 }
 
 /* label color */
 .input-field label {
-    color: #536dfe;
+    color: #3f51b5;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-    color: #536dfe;
+    color: #3f51b5;
 }
 
 /* label underline focus color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #536dfe;
-    box-shadow: 0 1px 0 0 #536dfe;
+    border-bottom: 1px solid #3f51b5;
+    box-shadow: 0 1px 0 0 #3f51b5;
 }
 
 /* valid color */
 .input-field input[type=text].valid {
-    border-bottom: 1px solid #536dfe;
-    box-shadow: 0 1px 0 0 #536dfe;
+    border-bottom: 1px solid #3f51b5;
+    box-shadow: 0 1px 0 0 #3f51b5;
 }
 
 /* invalid color */
 .input-field input[type=text].invalid {
-    border-bottom: 1px solid #536dfe;
-    box-shadow: 0 1px 0 0 #536dfe;
+    border-bottom: 1px solid #3f51b5;
+    box-shadow: 0 1px 0 0 #3f51b5;
 }
 
 /* icon prefix focus color */
 .input-field .prefix.active {
-    color: #536dfe;
+    color: #3f51b5;
 }
 
 textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #536dfe;
-    box-shadow: 0 1px 0 0 #536dfe;
+    border-bottom: 1px solid #3f51b5;
+    box-shadow: 0 1px 0 0 #3f51b5;
 }
 
 textarea.materialize-textarea:focus:not([readonly]) + label {
-    color: #536dfe;
+    color: #3f51b5;
 }
 
 input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #536dfe;
-    box-shadow: 0 1px 0 0 #536dfe;
+    border-bottom: 1px solid #3f51b5;
+    box-shadow: 0 1px 0 0 #3f51b5;
 }
 
 nav {
