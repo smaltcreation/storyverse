@@ -5,36 +5,14 @@ Template.homeMap.onCreated(function () {
     template.container = null;
     template.cursor = null;
 
-    let clusterStyles = [
-        {
+    let clusterStyles = _.map(_.range(1, 5), function (level) {
+        return {
             textColor: 'white',
-            url: '/images/cluster/m1.png',
+            url: `/images/cluster/m${level}.png`,
             height: 53,
             width: 53
-        },
-        {
-            textColor: 'white',
-            url: '/images/cluster/m2.png'
-        },
-        {
-            textColor: 'white',
-            url: '/images/cluster/m3.png',
-            height: 53,
-            width: 53
-        },
-        {
-            textColor: 'white',
-            url: '/images/cluster/m4.png',
-            height: 53,
-            width: 53
-        },
-        {
-            textColor: 'white',
-            url: '/images/cluster/m5.png',
-            height: 53,
-            width: 53
-        }
-    ];
+        };
+    });
 
     // Initialize map
     GoogleMaps.ready(template.data.name, function (map) {

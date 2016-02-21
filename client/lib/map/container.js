@@ -5,7 +5,8 @@ MapContainer = class MapContainer {
         self.map = map;
         self.bounds = bounds;
         self.maxLikes = null;
-        self.maxSize = 50;
+        self.minSize = 5;
+        self.maxSize = 25;
         self.markerCluster = null;
         self.markerClusterOptions = markerClusterOptions;
 
@@ -54,16 +55,21 @@ MapContainer = class MapContainer {
     }
 
     addedDoc (doc) {
-        let strokeWeight = doc.likes * this.maxSize / this.maxLikes / 2;
+        const COLOR = '#008cff';
+        let strokeWeight = doc.likes * this.maxSize / this.maxLikes;
+
+        if (strokeWeight < this.minSize) {
+            strokeWeight = this.minSize;
+        }
 
         let marker = new google.maps.Marker({
             doc,
             position: new google.maps.LatLng(doc.location.lat, doc.location.lng),
             icon: {
                 path: google.maps.SymbolPath.CIRCLE,
-                strokeColor: '#008cff',
-                strokeWeight,
-                fillColor: '#008cff'
+                strokeColor: COLOR,
+                fillColor: COLOR,
+                strokeWeight
             }
         });
 
