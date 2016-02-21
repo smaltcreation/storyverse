@@ -6,3 +6,11 @@
     background-color: #fff;
     color: #3f51b5;
 }
+
+#navbar .side-nav li {
+    padding: 0;
+}
+
+#navbar .side-nav li:hover {
+    background: none;
+}

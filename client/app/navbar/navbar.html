@@ -10,6 +10,18 @@
                     <i class="material-icons">menu</i>
                 </a>
                 <ul class="right">
+                    <li class="hide-on-med-and-down {{isActiveRoute 'nodeNew'}}">
+                        <a href="{{pathFor 'nodeNew'}}">
+                            <i class="material-icons left">library_add</i>
+                            New story
+                        </a>
+                    </li>
+                    <li class="hide-on-med-and-down">
+                        <a href="#">
+                            <i class="material-icons left">book</i>
+                            Documentation
+                        </a>
+                    </li>
                     <li>
                         <a href="#" class="dropdown-button" data-activates="navigation-dropdown">
                             <i class="material-icons">more_vert</i>
@@ -20,7 +32,39 @@
                     </li>
                 </ul>
                 <ul class="side-nav" id="side-nav">
-
+                    {{#if currentUser}}
+                        <li>
+                            <a href="#" id="logout">
+                                <i class="material-icons left">exit_to_app</i>
+                                Logout
+                            </a>
+                        </li>
+                    {{else}}
+                        <li class="{{isActiveRoute 'atSignIn'}}">
+                            <a href="{{pathFor 'atSignIn'}}">
+                                <i class="material-icons left">check</i>
+                                Login
+                            </a>
+                        </li>
+                        <li class="{{isActiveRoute 'atSignUp'}}">
+                            <a href="{{pathFor 'atSignUp'}}">
+                                <i class="material-icons left">person_add</i>
+                                Register
+                            </a>
+                        </li>
+                    {{/if}}
+                    <li class="{{isActiveRoute 'nodeNew'}}">
+                        <a href="{{pathFor 'nodeNew'}}">
+                            <i class="material-icons left">library_add</i>
+                            New story
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="material-icons left">book</i>
+                            Documentation
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>

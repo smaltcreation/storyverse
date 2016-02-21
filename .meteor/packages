@@ -51,3 +51,4 @@ underscorestring:underscore.string
 useraccounts:core
 useraccounts:iron-routing
 useraccounts:materialize
+zimme:active-route
