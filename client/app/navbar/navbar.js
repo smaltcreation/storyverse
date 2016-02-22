@@ -13,3 +13,9 @@ Template.navbar.onRendered(function () {
         }
     );
 });
+
+Template.navbar.events({
+    'click .side-nav a': function () {
+        $('#sidenav-overlay').trigger( "click" );
+    }
+});

@@ -6,14 +6,20 @@
                 Logout
             </a>
         </li>
+        <li class="{{isActiveRoute 'userProfile'}}">
+            <a href="{{pathFor 'userProfile' username=currentUser.username}}">
+                <i class="material-icons left">person</i>
+                {{currentUser.username}}
+            </a>
+        </li>
     {{else}}
-        <li>
+        <li class="{{isActiveRoute 'atSignIn'}}">
             <a href="{{pathFor 'atSignIn'}}">
                 <i class="material-icons left">check</i>
                 Login
             </a>
         </li>
-        <li>
+        <li class="{{isActiveRoute 'atSignUp'}}">
             <a href="{{pathFor 'atSignUp'}}">
                 <i class="material-icons left">person_add</i>
                 Register

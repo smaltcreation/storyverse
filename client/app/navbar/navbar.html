@@ -39,6 +39,12 @@
                                 Logout
                             </a>
                         </li>
+                        <li class="{{isActiveRoute 'userProfile'}}">
+                            <a href="{{pathFor 'userProfile' username=currentUser.username}}">
+                                <i class="material-icons left">person</i>
+                                {{currentUser.username}}
+                            </a>
+                        </li>
                     {{else}}
                         <li class="{{isActiveRoute 'atSignIn'}}">
                             <a href="{{pathFor 'atSignIn'}}">
