@@ -3,6 +3,10 @@ Meteor.publish('userProfile', function (username) {
         username: username
     });
 
+    if (!user) {
+        return [];
+    }
+
     return [
         Meteor.users.find({
             username: username
