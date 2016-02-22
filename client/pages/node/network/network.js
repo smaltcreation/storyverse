@@ -9,6 +9,7 @@ Template.nodeNetwork.onRendered(function () {
         if (self.subscriptionsReady()) {
             computation.stop();
 
+            // Generate nodes and edges
             let nodes = Collection.Nodes.find();
             let data = {
                 nodes: [],
@@ -37,6 +38,33 @@ Template.nodeNetwork.onRendered(function () {
                 }
             });
 
+            // Connected nodes
+            let nodesToCheck = [self.data.node._id];
+            let checkedNodes = [];
+
+            while (nodesToCheck.length) {
+                let newNodesToCheck = [];
+
+                nodesToCheck.forEach(function (nodeToCheck) {
+                    checkedNodes.push(nodeToCheck);
+
+                    _.each(data.edges, function (edge) {
+                        if (edge.from === nodeToCheck && !_.contains(checkedNodes, edge.to)) {
+                            newNodesToCheck.push(edge.to);
+                        }
+                    });
+                });
+
+                nodesToCheck = newNodesToCheck;
+            }
+
+            // Remove useless nodes
+            let invalidNodes = _.difference(_.pluck(data.nodes, 'id'), checkedNodes);
+            data.nodes = _.reject(data.nodes, function (node) {
+                return _.contains(invalidNodes, node.id);
+            });
+
+            // Generate graph
             let container = document.getElementsByClassName('network')[0];
             let network = new vis.Network(container, data, {
                 nodes: {
@@ -53,6 +81,7 @@ Template.nodeNetwork.onRendered(function () {
                 }
             });
 
+            // Change page on click
             network.on('click', function (params) {
                 if (params.nodes.length !== 0) {
                     Router.go('nodeShow', {
