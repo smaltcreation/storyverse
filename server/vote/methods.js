@@ -21,17 +21,29 @@ Meteor.methods({
             });
         }
 
-        // Update parents
+        // Direction
         let inc = vote ? -1 : 1;
 
-        while (node) {
-            Collection.Nodes.update(node._id, {
-                $inc: {
-                    likes: inc
-                }
-            });
+        // Update node
+        Collection.Nodes.update(node._id, {
+            $inc: {
+                likes: inc
+            }
+        });
 
-            node = node.from ? Collection.Nodes.findOne(node.from) : null;
+        // Update parents
+        if (node.from) {
+            node = Collection.Nodes.findOne(node.from);
+
+            while (node) {
+                Collection.Nodes.update(node._id, {
+                    $inc: {
+                        totalChildrenLikes: inc
+                    }
+                });
+
+                node = node.from ? Collection.Nodes.findOne(node.from) : null;
+            }
         }
 
         return true;
