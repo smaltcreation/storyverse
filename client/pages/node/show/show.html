@@ -59,7 +59,14 @@
                                     </p>
                                 </div>
                                 <div class="card-action right-align">
-                                    <a href="#" class="indigo-text">Upvote</a>
+                                    <a href="#" class="indigo-text">
+                                        Upvote
+                                    </a>
+                                    {{#if node.from}}
+                                        <a href="{{pathFor 'nodeShow' id=node.root}}" class="indigo-text">
+                                            See the beginning
+                                        </a>
+                                    {{/if}}
                                     <a href="{{pathFor 'nodeNew' from=node._id}}" class="indigo-text">
                                         Continue the story
                                     </a>
@@ -68,7 +75,7 @@
                         </li>
                         {{> nodeNextContainer from=node author=author}}
                         <li class="end">
-                            <div class="card-panel right-align">
+                            <div class="card-panel">
                                 Share it with your friends !
                                 <a class="indigo-text">
                                     <i class="fa fa-facebook-square"></i>
