@@ -52,5 +52,6 @@ useraccounts:iron-routing
 useraccounts:materialize
 zimme:active-route
 
-storyverse:vis
+storyverse:jquery-flot
 storyverse:marker-spider
+storyverse:vis

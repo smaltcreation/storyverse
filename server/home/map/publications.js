@@ -46,3 +46,9 @@ Meteor.publish('homePopular', function () {
         limit: 1
     });
 });
+
+Meteor.publish('homeChart', function () {
+    return Collection.Statistics.find({}, {
+        limit: 500
+    });
+});

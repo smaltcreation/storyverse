@@ -2,3 +2,9 @@
     height: calc(100vh - 275px);
     min-height: initial;
 }
+
+#nodes-chart {
+    margin: 0 auto;
+    max-width: 80%;
+    height: 400px;
+}

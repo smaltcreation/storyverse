@@ -27,3 +27,16 @@ SyncedCron.add({
         });
     }
 });
+
+SyncedCron.add({
+    name: 'Update nodes statistics',
+    schedule: function(parser) {
+        return parser.text('every 5 minutes');
+    },
+    job: function() {
+        Collection.Statistics.insert({
+            createdAt: new Date(),
+            totalNodes: Collection.Nodes.find().count()
+        });
+    }
+});
