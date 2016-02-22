@@ -5,8 +5,10 @@ Template.nodeNetwork.onCreated(function () {
 Template.nodeNetwork.onRendered(function () {
     let self = this;
 
-    self.autorun(function () {
+    Tracker.autorun(function (computation) {
         if (self.subscriptionsReady()) {
+            computation.stop();
+
             let nodes = Collection.Nodes.find();
             let data = {
                 nodes: [],
