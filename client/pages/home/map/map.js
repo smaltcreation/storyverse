@@ -16,7 +16,10 @@ Template.homeMap.onCreated(function () {
 
     // Initialize map
     GoogleMaps.ready(template.data.name, function (map) {
-        template.container = new MapContainer(map.instance, template.bounds, {styles: clusterStyles});
+        template.container = new MapContainer(map.instance, template.bounds, {
+            maxZoom: 18,
+            styles: clusterStyles
+        });
 
         // Update markers
         template.autorun(function () {

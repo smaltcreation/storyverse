@@ -50,8 +50,16 @@ MapContainer = class MapContainer {
             });
         });
 
-        // Marker cluster
+        // Plugins
         self.markerCluster = new MarkerClusterer(self.map, [], self.markerClusterOptions);
+        self.oms = new OverlappingMarkerSpiderfier(self.map);
+
+        // Open page on click
+        self.oms.addListener('click', function (marker) {
+            Router.go('nodeShow', {
+                id: marker.doc._id
+            });
+        });
     }
 
     addedDoc (doc) {
@@ -73,26 +81,20 @@ MapContainer = class MapContainer {
             }
         });
 
-        // Open page on click
-        google.maps.event.addListener(marker, 'click', function () {
-            Router.go('nodeShow', {
-                id: doc._id
-            });
-        });
-
         this.markerCluster.addMarker(marker);
+        this.oms.addMarker(marker);
     }
 
     changedDoc (doc) {
-        // TODO: test
-        let marker = this.findMarkerByDoc(doc);
-        marker.doc = doc;
+        this.removedDoc(doc);
+        this.addedDoc(doc);
     }
 
     removedDoc (doc) {
         let marker = this.findMarkerByDoc(doc);
         google.maps.event.clearInstanceListeners(marker);
         this.markerCluster.removeMarker(marker);
+        this.oms.removeMarker(marker);
     }
 
     findMarkerByDoc (doc) {

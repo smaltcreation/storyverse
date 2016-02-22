@@ -18,10 +18,10 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 accounts-password
 check
-coffeescript
 email
 less
 reactive-var
+service-configuration
 
 meteorhacks:npm
 npm-container
@@ -44,11 +44,12 @@ ongoworks:security
 percolate:synced-cron
 polyroid:font-roboto
 reywood:iron-router-ga
-service-configuration
 slam310:smooth-scroll
-storyverse:vis
 underscorestring:underscore.string
 useraccounts:core
 useraccounts:iron-routing
 useraccounts:materialize
 zimme:active-route
+
+storyverse:vis
+storyverse:marker-spider
