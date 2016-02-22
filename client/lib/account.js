@@ -7,6 +7,7 @@ AccountsTemplates.configure({
 let preSignUp = function (password, info) {
     info.profile.tips = true;
     info.profile.color = _.sample(_.pluck(Data.COLORS, 'value'));
+    info.profile.registeredAt = moment().format();
 };
 
 AccountsTemplates.configure({

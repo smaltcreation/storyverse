@@ -4,7 +4,6 @@ Template.navigationDropdown.events({
             if (error) {
                 toastr.error(error.reason, 'Error');
             } else {
-                Router.go('/');
                 toastr.success('You have been disconnected.');
             }
         });

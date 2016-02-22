@@ -98,7 +98,7 @@
     padding: 0 !important;
 }
 
-.node .chip i {
+.node .chip:not(.author) i {
     cursor: default;
 }
 
