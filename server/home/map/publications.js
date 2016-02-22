@@ -49,6 +49,6 @@ Meteor.publish('homePopular', function () {
 
 Meteor.publish('homeChart', function () {
     return Collection.Statistics.find({}, {
-        limit: 500
+        limit: 5000
     });
 });

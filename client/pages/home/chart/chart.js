@@ -15,13 +15,14 @@ Template.homeChart.onRendered(function () {
                     data: _.map(statistics.fetch(), function (statistic) {
                         return [statistic.createdAt, statistic.totalNodes];
                     }),
-                    color: 'red'
+                    color: '#ff4081'
                 }
             ];
 
             self.$('.flot-chart-content').plot(series, {
                 grid: {
-                    borderWidth: 1
+                    borderWidth: 1,
+                    backgroundColor: '#fff'
                 },
                 xaxis: {
                     mode: 'time'

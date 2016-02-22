@@ -91,7 +91,13 @@
 }
 
 .nodes .end a {
-    margin-left: 2rem;
+    margin-right: 2rem;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.nodes .end a i {
+    vertical-align: middle;
 }
 
 .nodes .row .col {

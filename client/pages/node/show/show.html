@@ -7,6 +7,7 @@
             background: {{node.color}} !important;
         }
     </style>
+    <div id="fb-root"></div>
 
     <div class="node-show-container">
         <div class="row">
@@ -68,18 +69,13 @@
                         {{> nodeNextContainer from=node author=author}}
                         <li class="end">
                             <div class="card-panel">
-                                Share it with your friends !
-                                <a class="indigo-text">
-                                    <i class="fa fa-facebook-square"></i>
-                                    <span>Facebook</span>
+                                <a href="{{pathFor 'nodeNew'}}">
+                                    <i class="material-icons">library_add</i>
+                                    Create of story from scratch
                                 </a>
-                                <a class="indigo-text">
-                                    <i class="fa fa-twitter-square"></i>
-                                    <span>Twitter</span>
-                                </a>
-                                <a class="indigo-text">
-                                    <i class="fa fa-google-plus-square"></i>
-                                    <span>Google+</span>
+                                <a href="{{pathFor 'documentation'}}">
+                                    <i class="material-icons">library_books</i>
+                                    Need more informations ?
                                 </a>
                             </div>
                         </li>
