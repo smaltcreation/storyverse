@@ -9,10 +9,12 @@ MapContainer = class MapContainer {
         self.maxSize = 25;
         self.markerCluster = null;
         self.markerClusterOptions = markerClusterOptions;
+        self.ready = new ReactiveVar(false);
 
         Meteor.call('getMaxLikes', function (error, maxLikes) {
             if (!error) {
                 self.maxLikes = maxLikes === 0 ? 1 : maxLikes;
+                self.ready.set(true);
                 self.start();
             }
         });

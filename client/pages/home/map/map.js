@@ -27,17 +27,25 @@ Template.homeMap.onCreated(function () {
         });
 
         // Find nodes
-        let docs = Collection.Nodes.find();
+        template.autorun(function () {
+            if (template.container.ready.get() && !template.cursor) {
+                let docs = Collection.Nodes.find({
+                    from: {
+                        $exists: false
+                    }
+                });
 
-        template.cursor = docs.observe({
-            added: function (doc) {
-                template.container.addedDoc(doc);
-            },
-            changed: function (doc) {
-                template.container.changedDoc(doc);
-            },
-            removed: function (doc) {
-                template.container.removedDoc(doc);
+                template.cursor = docs.observe({
+                    added: function (doc) {
+                        template.container.addedDoc(doc);
+                    },
+                    changed: function (doc) {
+                        template.container.changedDoc(doc);
+                    },
+                    removed: function (doc) {
+                        template.container.removedDoc(doc);
+                    }
+                });
             }
         });
     });
