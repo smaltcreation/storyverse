@@ -1,6 +1,10 @@
 <template name="nodeNew">
     <div class="jumbotron center-align">
-        <h1>Write a new story</h1>
+        {{#if from}}
+            <h1>Continue the story</h1>
+        {{else}}
+            <h1>Write a new story</h1>
+        {{/if}}
     </div>
     <div class="container">
         {{>quickForm options}}
