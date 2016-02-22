@@ -1,0 +1,37 @@
+<template name="userProfile">
+    <div id="user-profile">
+        <div class="jumbotron">
+            <div class="container center-align">
+                <h2>{{user.username}}</h2>
+                <p>
+                    <span>
+                        member since {{since}}
+                    </span>
+                    <br>
+                    <span>
+                        {{totalNodes}}
+                        <i class="fa fa-dot-circle-o"></i>
+                        created
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="container">
+            <ul class="collection">
+                {{#each nodes}}
+                    <li class="collection-item avatar">
+                        <a href="{{pathFor 'nodeShow' id=_id}}">
+                            <i class="material-icons circle" style="background: {{color}};">zoom_in</i>
+                        </a>
+                        {{#if title}}
+                            <span class="title">{{title}}</span>
+                        {{/if}}
+                        <p class="text-muted">
+                            {{content}}
+                        </p>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
