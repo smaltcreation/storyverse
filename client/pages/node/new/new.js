@@ -7,6 +7,8 @@ Template.nodeNew.onCreated(function () {
 
 Template.nodeNew.helpers({
     options: function () {
+        let user = Meteor.user();
+
         return {
             schema: Schema.Node,
             id: 'form-node-new',
@@ -17,8 +19,8 @@ Template.nodeNew.helpers({
                 'location'
             ],
             doc: {
-                language: Meteor.user().profile.language,
-                color: Meteor.user().profile.color
+                language: user ? user.profile.language : null,
+                color: user ? user.profile.color : null
             }
         };
     }

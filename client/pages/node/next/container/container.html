@@ -1,0 +1,30 @@
+<template name="nodeNextContainer">
+    {{#if Template.subscriptionsReady}}
+        {{#if and nextPopularNode.get nextAuthorNode.get}}
+            <li class="node node-container">
+                <!--If there are several node there is a new <ul></ul> -->
+                <ul class="nodes row">
+                    <!--First is the external node with the best score, hidden for phones-->
+                    <li class="node node-external col s12 m6 hide-on-small-only">
+                        {{> nodeShowNextPopular node=nextPopularNode.get}}
+                    </li>
+                    <!--Second is the next node of the author-->
+                    <li class="node col s12 m6">
+                        {{> nodeShowNextAuthor node=nextAuthorNode.get author=author}}
+                    </li>
+                </ul>
+            </li>
+        {{else}}
+            {{#if nextPopularNode.get}}
+                <li class="node">
+                    {{> nodeShowNextPopular node=nextPopularNode.get}}
+                </li>
+            {{/if}}
+            {{#if nextAuthorNode.get}}
+                <li class="node">
+                    {{> nodeShowNextAuthor node=nextAuthorNode.get author=author}}
+                </li>
+            {{/if}}
+        {{/if}}
+    {{/if}}
+</template>

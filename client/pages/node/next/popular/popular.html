@@ -1,0 +1,29 @@
+<template name="nodeShowNextPopular">
+    <div class="node-badge tooltipped" data-position="left" data-delay="50" data-tooltip="Number of likes">
+        <span>{{nodeScore node}}</span>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            {{#if node.title}}
+                <p class="card-title">{{node.title}}</p>
+            {{/if}}
+            <p class="about">
+            <span class="chip tooltipped" data-position="top" data-delay="50" data-tooltip="Other popular sequence">
+                <i class="material-icons">star</i>
+                {{author.username}}
+            </span>
+            <span class="chip">
+                <i class="material-icons">access_time</i>
+                {{date node.createdAt}}
+            </span>
+            </p>
+            <p>
+                {{node.content}}
+            </p>
+        </div>
+        <div class="card-action right-align">
+            <a href="#" class="indigo-text">Upvote</a>
+            <a href="{{pathFor 'nodeShow' id=node._id}}" class="indigo-text">Keep reading</a>
+        </div>
+    </div>
+</template>

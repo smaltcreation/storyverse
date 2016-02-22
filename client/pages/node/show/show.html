@@ -35,7 +35,7 @@
                         <!--Main node (selected node)-->
                         <li class="node main">
                             <div class="node-badge tooltipped" data-position="left" data-delay="50" data-tooltip="Number of likes">
-                                <span>{{score}}</span>
+                                <span>{{nodeScore node}}</span>
                             </div>
                             <div class="card">
                                 <div class="card-content">
@@ -51,7 +51,7 @@
                                         </a>
                                         <span class="chip">
                                             <i class="material-icons">access_time</i>
-                                            {{date}}
+                                            {{date node.createdAt}}
                                         </span>
                                     </p>
                                     <p>
@@ -66,89 +66,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <!--If they're several node there is a new <ul></ul> -->
-                            <ul class="nodes row">
-                                <!--First is the external node with the best score, hidden for phones-->
-                                <li class="node node-external col s12 m6 hide-on-small-only">
-                                    <div class="node-badge tooltipped" data-position="left" data-delay="50" data-tooltip="Number of likes">
-                                        <span>42</span>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <p class="card-title">I'm a node</p>
-                                            <p class="about">
-                                                <span class="chip tooltipped" data-position="top" data-delay="50" data-tooltip="Other popular sequence">
-                                                    <i class="material-icons">star</i>
-                                                    samybob1
-                                                </span>
-                                                <span class="chip">
-                                                    <i class="material-icons">access_time</i>
-                                                    {{date}}
-                                                </span>
-                                            </p>
-                                            <p>
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                            </p>
-                                        </div>
-                                        <div class="card-action right-align">
-                                            <a href="#" class="indigo-text">Upvote</a>
-                                            <a href="#" class="indigo-text">Keep reading</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!--Second is the next node of the author-->
-                                <li class="node col s12 m6">
-                                    <div class="node-badge tooltipped" data-position="left" data-delay="50" data-tooltip="Number of likes">
-                                        <span>38</span>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <p class="card-title">I'm a node</p>
-                                            <p class="about">
-                                                <span class="chip tooltipped" data-position="top" data-delay="50" data-tooltip="By the same author">
-                                                    <i class="material-icons">person</i>
-                                                    {{author.username}}
-                                                </span>
-                                                <span class="chip">
-                                                    <i class="material-icons">access_time</i>
-                                                    {{date}}
-                                                </span>
-                                            </p>
-                                            <p>
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                                I am a very simple card. I am good at containing small bits of information.
-                                                I am convenient because I require little markup to use effectively.
-                                            </p>
-                                        </div>
-                                        <div class="card-action right-align">
-                                            <a href="#" class="indigo-text">Upvote</a>
-                                            <a href="#" class="indigo-text">Keep reading</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
+                        {{> nodeNextContainer from=node author=author}}
                         <li class="end">
                             <div class="card-panel right-align">
                                 Share it with your friends !

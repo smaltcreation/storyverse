@@ -73,6 +73,7 @@ MapContainer = class MapContainer {
         let marker = new google.maps.Marker({
             doc,
             position: new google.maps.LatLng(doc.location.lat, doc.location.lng),
+            title: doc.title,
             icon: {
                 path: google.maps.SymbolPath.CIRCLE,
                 strokeColor: COLOR,
