@@ -37,6 +37,7 @@ iron:router
 matb33:collection-hooks
 materialize:materialize
 mdg:geolocation
+momentjs:moment
 numeral:numeral
 oakworks:marker-clusterer
 okgrow:router-autoscroll

@@ -11,6 +11,4 @@ Collection.Nodes.before.insert(function (userId, doc) {
         let node = Collection.Nodes.findOne(doc.from);
         doc.root = node.root;
     }
-
-    console.log(doc, doc.location);
 });

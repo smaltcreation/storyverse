@@ -73,10 +73,11 @@
 .node .card-content .card-title {
     line-height: 18px;
     font-size: 18px;
+    margin-bottom: 0.75rem;
 }
 
-.node .card-content .card-title::first-letter {
-    text-transform: uppercase;
+.nodes .card-content .about {
+    margin-bottom: 0.75rem;
 }
 
 .nodes .end {
@@ -95,6 +96,10 @@
 
 .nodes .row .col {
     padding: 0 !important;
+}
+
+.node .chip i {
+    cursor: default;
 }
 
 @media screen and (min-width: 768px) {
