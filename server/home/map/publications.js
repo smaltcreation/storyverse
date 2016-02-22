@@ -37,3 +37,12 @@ Meteor.publish('homeMap', function (bounds) {
 
     return Collection.Nodes.find(selector);
 });
+
+Meteor.publish('homePopular', function () {
+    return Collection.Nodes.find({}, {
+        sort: {
+            totalChildrenLikes: -1
+        },
+        limit: 1
+    });
+});
