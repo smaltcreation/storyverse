@@ -83,12 +83,21 @@ Meteor.publish('nodeShowNextPopular', function (fromId) {
 
     let node = Collection.Nodes.findOne(selector, options);
 
+    if (!node) {
+        return [];
+    }
+
     return [
         Collection.Nodes.find(selector, _.extend(options, {
             limit: 1
         })),
         Meteor.users.find({
             _id: node.createdBy
+        }, {
+            fields: {
+                username: 1,
+                profile: 1
+            }
         })
     ];
 });

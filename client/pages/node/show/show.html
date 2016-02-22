@@ -6,12 +6,6 @@
         .node:after {
             background: {{node.color}} !important;
         }
-
-        .node-external .node-badge,
-        .node-external:before,
-        .node-external:after {
-            background: #ff4081 !important;
-        }
     </style>
 
     <div class="node-show-container">
@@ -59,9 +53,7 @@
                                     </p>
                                 </div>
                                 <div class="card-action right-align">
-                                    <a href="#" class="indigo-text">
-                                        Upvote
-                                    </a>
+                                    {{> nodeVote id=node._id}}
                                     {{#if node.from}}
                                         <a href="{{pathFor 'nodeShow' id=node.root}}" class="indigo-text">
                                             See the beginning

@@ -1,28 +1,28 @@
 <template name="nodeNextContainer">
     {{#if Template.subscriptionsReady}}
-        {{#if and nextPopularNode.get nextAuthorNode.get}}
+        {{#if and nextPopularNode nextAuthorNode}}
             <li class="node node-container">
                 <!--If there are several node there is a new <ul></ul> -->
                 <ul class="nodes row">
                     <!--First is the external node with the best score, hidden for phones-->
                     <li class="node node-external col s12 m6 hide-on-small-only">
-                        {{> nodeShowNextPopular node=nextPopularNode.get}}
+                        {{> nodeShowNextPopular node=nextPopularNode}}
                     </li>
                     <!--Second is the next node of the author-->
                     <li class="node col s12 m6">
-                        {{> nodeShowNextAuthor node=nextAuthorNode.get author=author}}
+                        {{> nodeShowNextAuthor node=nextAuthorNode author=author}}
                     </li>
                 </ul>
             </li>
         {{else}}
-            {{#if nextPopularNode.get}}
+            {{#if nextPopularNode}}
                 <li class="node">
-                    {{> nodeShowNextPopular node=nextPopularNode.get}}
+                    {{> nodeShowNextPopular node=nextPopularNode}}
                 </li>
             {{/if}}
-            {{#if nextAuthorNode.get}}
+            {{#if nextAuthorNode}}
                 <li class="node">
-                    {{> nodeShowNextAuthor node=nextAuthorNode.get author=author}}
+                    {{> nodeShowNextAuthor node=nextAuthorNode author=author}}
                 </li>
             {{/if}}
         {{/if}}

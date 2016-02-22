@@ -1,34 +1,32 @@
 Template.nodeNextContainer.onCreated(function () {
-    let self = this;
+    this.data.nextAuthorNode = null;
+    this.data.nextPopularNode = null;
 
-    self.data.nextAuthorNode = new ReactiveVar();
-    self.data.nextPopularNode = new ReactiveVar();
+    this.subscribe('nodeShowNextAuthor', this.data.from._id);
+    this.subscribe('nodeShowNextPopular', this.data.from._id);
+});
 
-    self.subscribe('nodeShowNextAuthor', self.data.from._id, {
-        onReady: function () {
-            self.data.nextAuthorNode.set(Collection.Nodes.findOne({
-                from: self.data.from._id,
-                createdBy: self.data.from.createdBy
-            }, {
-                sort: {
-                    createdAt: -1
-                }
-            }));
-        }
-    });
-
-    self.subscribe('nodeShowNextPopular', self.data.from._id, {
-        onReady: function () {
-            self.data.nextPopularNode.set(Collection.Nodes.findOne({
-                from: self.data.from._id,
-                createdBy: {
-                    $ne: self.data.from.createdBy
-                }
-            }, {
-                sort: {
-                    totalChildrenLikes: -1
-                }
-            }));
-        }
-    });
+Template.nodeNextContainer.helpers({
+    nextAuthorNode: function () {
+        return Collection.Nodes.findOne({
+            from: this.from._id,
+            createdBy: this.from.createdBy
+        }, {
+            sort: {
+                createdAt: -1
+            }
+        });
+    },
+    nextPopularNode: function () {
+        return Collection.Nodes.findOne({
+            from: this.from._id,
+            createdBy: {
+                $ne: this.from.createdBy
+            }
+        }, {
+            sort: {
+                totalChildrenLikes: -1
+            }
+        });
+    }
 });

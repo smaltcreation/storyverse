@@ -1,29 +1,31 @@
 <template name="nodeShowNextAuthor">
-    <div class="node-badge tooltipped" data-position="left" data-delay="50" data-tooltip="Number of likes">
-        <span>{{nodeScore node}}</span>
-    </div>
-    <div class="card">
-        <div class="card-content">
-            {{#if node.title}}
-                <p class="card-title">{{node.title}}</p>
-            {{/if}}
-            <p class="about">
+    {{#with node}}
+        <div class="node-badge tooltipped" data-position="left" data-delay="50" data-tooltip="Number of likes">
+            <span>{{nodeScore this}}</span>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                {{#if title}}
+                    <p class="card-title">{{title}}</p>
+                {{/if}}
+                <p class="about">
                     <span class="chip tooltipped" data-position="top" data-delay="50" data-tooltip="By the same author">
                         <i class="material-icons">person</i>
-                        {{author.username}}
+                        {{../author.username}}
                     </span>
                     <span class="chip">
                         <i class="material-icons">access_time</i>
-                        {{date node.createdAt}}
+                        {{date createdAt}}
                     </span>
-            </p>
-            <p>
-                {{node.content}}
-            </p>
+                </p>
+                <p>
+                    {{content}}
+                </p>
+            </div>
+            <div class="card-action right-align">
+                {{> nodeVote id=_id}}
+                <a href="{{pathFor 'nodeShow' id=_id}}" class="indigo-text">Keep reading</a>
+            </div>
         </div>
-        <div class="card-action right-align">
-            <a href="#" class="indigo-text">Upvote</a>
-            <a href="{{pathFor 'nodeShow' id=node._id}}" class="indigo-text">Keep reading</a>
-        </div>
-    </div>
+    {{/with}}
 </template>
