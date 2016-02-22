@@ -6,9 +6,15 @@
                     <h5 class="white-text">Yeah, statistics!</h5>
                     {{#if Template.subscriptionsReady}}
                         <p class="grey-text text-lighten-4">
-                            {{stories}} stories<br>
-                            {{nodes}} nodes<br>
-                            {{users}} users<br>
+                            {{#if stories}}
+                                {{stories}} stories<br>
+                            {{/if}}
+                            {{#if nodes}}
+                                {{nodes}} nodes<br>
+                            {{/if}}
+                            {{#if users}}
+                                {{users}} users
+                            {{/if}}
                         </p>
                     {{/if}}
                 </div>

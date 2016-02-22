@@ -4,17 +4,17 @@ Template.footer.onCreated(function () {
     if (self.data.stats) {
         self.subscribe('footerTotals', {
             onReady: function () {
-                self.data.stories = Collection.Totals.findOne({
-                    name: 'stories'
-                }).value;
+                let names = ['stories', 'nodes', 'users'];
 
-                self.data.nodes = Collection.Totals.findOne({
-                    name: 'nodes'
-                }).value;
-
-                self.data.users = Collection.Totals.findOne({
-                    name: 'users'
-                }).value;
+                _.each(names, function (name) {
+                    let doc = Collection.Totals.findOne({
+                        name: name
+                    });
+                    
+                    if (doc) {
+                        self.data[name] = doc.value;
+                    }
+                });
             }
         });
     }
